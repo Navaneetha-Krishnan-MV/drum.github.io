@@ -6,12 +6,14 @@ for(var i=0;i<x;i++){
         
         var clicked = this.innerHTML;
         makesound(clicked);
+        makeanimation(clicked);
       
     });
 }
 
 document.addEventListener("keypress",function(event){
     makesound(event.key);
+    makeanimation(event.key);
 
 });
 
@@ -57,4 +59,12 @@ function makesound(key){
         default:
             console.log(clicked);
     }
+}
+
+function makeanimation(key){
+    var wanted = document.querySelector("."+key);
+    wanted.classList.add("pressed");
+    setTimeout(function(){
+        wanted.classList.remove("pressed")
+    },100);
 }
