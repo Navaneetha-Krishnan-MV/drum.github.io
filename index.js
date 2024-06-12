@@ -3,8 +3,6 @@ var x = document.querySelectorAll(".drum").length;
 
 for(var i=0;i<x;i++){
     document.querySelectorAll(".drum")[i].addEventListener("click", function () {
-
-        this.style.color = "white";
         
         var clicked = this.innerHTML;
         makesound(clicked);
